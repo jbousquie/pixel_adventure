@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="25">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="36">
  <tileset firstgid="1" source="Pixel Adventure.tsx"/>
  <layer id="1" name="background" width="40" height="23">
+  <properties>
+   <property name="BackgroundColor" value="Gray"/>
+  </properties>
   <data encoding="csv">
 24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,
 24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,
@@ -13,10 +16,10 @@
 24,24,24,113,40,41,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
 24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
 24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
-24,24,24,113,40,41,42,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,41,42,0,0,0,0,0,111,24,24,24,
+24,24,24,113,40,41,42,0,0,0,13,14,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,40,40,41,42,0,0,0,0,0,111,24,24,24,
 24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
-24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
-24,24,24,113,40,41,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,41,42,0,0,0,0,0,111,24,24,24,
+24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
+24,24,24,113,40,41,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,40,41,42,0,0,0,0,0,111,24,24,24,
 24,24,24,113,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
 24,24,24,113,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,24,24,24,
 24,24,24,113,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,8,9,7,8,9,0,0,0,0,0,111,24,24,24,
@@ -35,16 +38,27 @@
   <object id="13" x="48" y="304" width="528" height="16"/>
   <object id="15" x="64" y="256" width="96" height="48"/>
   <object id="16" x="64" y="240" width="16" height="16"/>
-  <object id="17" x="176" y="160" width="48" height="16"/>
-  <object id="18" x="320" y="192" width="48" height="16"/>
+  <object id="17" x="160" y="160" width="64" height="16"/>
+  <object id="18" x="304" y="192" width="64" height="16"/>
   <object id="19" x="400" y="256" width="96" height="48"/>
-  <object id="20" type="Platform" x="448" y="208" width="48" height="16"/>
-  <object id="21" type="Platform" x="448" y="160" width="48" height="16"/>
+  <object id="20" type="Platform" x="432" y="208" width="64" height="16"/>
+  <object id="21" type="Platform" x="432" y="160" width="64" height="16"/>
   <object id="22" type="Platform" x="64" y="112" width="48" height="16"/>
   <object id="23" type="Platform" x="64" y="160" width="48" height="16"/>
   <object id="24" type="Platform" x="64" y="208" width="48" height="16"/>
  </objectgroup>
  <objectgroup id="2" name="spawnpoints">
   <object id="4" name="Player" type="Player" x="273.334" y="254.666" width="32" height="29.3333"/>
+  <object id="25" name="Bananas" type="Fruit" x="80" y="80" width="32" height="32"/>
+  <object id="26" name="Orange" type="Fruit" x="80" y="128" width="32" height="32"/>
+  <object id="27" name="Apple" type="Fruit" x="80" y="176" width="32" height="32"/>
+  <object id="28" name="Cherries" type="Fruit" x="160" y="128" width="32" height="32"/>
+  <object id="29" name="Cherries" type="Fruit" x="192" y="128" width="32" height="32"/>
+  <object id="30" name="Cherries" type="Fruit" x="176" y="96" width="32" height="32"/>
+  <object id="31" name="Cherries" type="Fruit" x="304" y="160" width="32" height="32"/>
+  <object id="32" name="Cherries" type="Fruit" x="336" y="160" width="32" height="32"/>
+  <object id="33" name="Cherries" type="Fruit" x="320" y="128" width="32" height="32"/>
+  <object id="34" name="Kiwi" type="Fruit" x="448" y="128" width="32" height="32"/>
+  <object id="35" name="Kiwi" type="Fruit" x="448" y="176" width="32" height="32"/>
  </objectgroup>
 </map>
