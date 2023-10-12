@@ -8,30 +8,23 @@ import 'package:flutter/painting.dart';
 import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
 
-class PixelAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection {
+class PixelAdventure extends FlameGame with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection {
   @override
   Color backgroundColor() => const Color(0xFF211F30);
-  late final CameraComponent cam;
+  late CameraComponent cam;
   Player player = Player(character: 'Mask Dude');
   late JoystickComponent joystick;
   bool showJoystick = false;
+  List<String> levelNames = ['Level-01', 'Level-01'];
+  int currentLevelIndex = 0;
 
   @override
   FutureOr<void> onLoad() async {
-    // load all images into cache
     await images.loadAllImages();
-    final world = Level(player: player, levelName: 'Level-01');
-    cam = CameraComponent.withFixedResolution(
-        width: 640, height: 360, world: world);
-    cam.viewfinder.anchor = Anchor.topLeft;
-
-    addAll([cam, world]);
-
+    _loadLevel();
     if (showJoystick) {
       addJoystick();
     }
-
     return super.onLoad();
   }
 
@@ -46,8 +39,7 @@ class PixelAdventure extends FlameGame
   void addJoystick() {
     joystick = JoystickComponent(
         knob: SpriteComponent(sprite: Sprite(images.fromCache('HUD/Knob.png'))),
-        background: SpriteComponent(
-            sprite: Sprite(images.fromCache('HUD/Joystick.png'))),
+        background: SpriteComponent(sprite: Sprite(images.fromCache('HUD/Joystick.png'))),
         margin: const EdgeInsets.only(left: 32, bottom: 32));
     add(joystick);
   }
@@ -69,5 +61,25 @@ class PixelAdventure extends FlameGame
         break;
     }
     {}
+  }
+
+  void loadNextLevel() {
+    if (currentLevelIndex < levelNames.length - 1) {
+      currentLevelIndex++;
+      _loadLevel();
+    } else {
+      // no more levels
+    }
+  }
+
+  void _loadLevel() {
+    Future.delayed(const Duration(seconds: 1), () {
+      Level world = Level(player: player, levelName: levelNames[currentLevelIndex]);
+      cam = CameraComponent.withFixedResolution(width: 640, height: 360, world: world);
+      cam.viewfinder.anchor = Anchor.topLeft;
+
+      addAll([cam, world]);
+    });
+    // load all images into cache
   }
 }

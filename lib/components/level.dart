@@ -6,6 +6,7 @@ import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/background_tile.dart';
 import 'package:pixel_adventure/components/fruit.dart';
 import 'package:pixel_adventure/components/saw.dart';
+import 'package:pixel_adventure/components/checkpoint.dart';
 
 import 'package:pixel_adventure/pixel_adventure.dart';
 
@@ -37,8 +38,7 @@ class Level extends World with HasGameRef<PixelAdventure> {
     final numTilesX = (game.size.x / tileSize).floor();
 
     if (backgroundLayer != null) {
-      final backGroundColor =
-          backgroundLayer.properties.getValue('BackgroundColor');
+      final backGroundColor = backgroundLayer.properties.getValue('BackgroundColor');
 
       for (double y = 0; y < game.size.y / numTilesY; y++) {
         for (double x = 0; x < numTilesX; x++) {
@@ -82,6 +82,11 @@ class Level extends World with HasGameRef<PixelAdventure> {
                 position: Vector2(spawnPoint.x, spawnPoint.y),
                 size: Vector2(spawnPoint.width, spawnPoint.height));
             add(saw);
+            break;
+          case 'Checkpoint':
+            final checkpoint = Checkpoint(
+                position: Vector2(spawnPoint.x, spawnPoint.y), size: Vector2(spawnPoint.width, spawnPoint.height));
+            add(checkpoint);
             break;
           default:
         }
