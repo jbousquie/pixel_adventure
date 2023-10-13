@@ -46,3 +46,42 @@ app.*.map.json
 .metadata
 pubspec.lock
 
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+windows/flutter/generated_plugins.cmake
+.gitignore
+build.gradle
+gradlew
+gradlew.bat
+local.properties
+settings.gradle
+.vscode/settings.json
+android/build.gradle
+android/gradle.properties
+android/gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+linux/flutter/CMakeLists.txt
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
+.vscode/settings.json
+android/build.gradle
+android/gradle.properties
+android/gradle/wrapper/gradle-wrapper.properties
+linux/flutter/CMakeLists.txt
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
+android/build.gradle
+.vscode/settings.json
+android/gradle.properties
+linux/flutter/CMakeLists.txt
