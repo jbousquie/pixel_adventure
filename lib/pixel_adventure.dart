@@ -10,7 +10,11 @@ import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
 
 class PixelAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection, TapCallbacks {
+    with
+        HasKeyboardHandlerComponents,
+        DragCallbacks,
+        HasCollisionDetection,
+        TapCallbacks {
   @override
   Color backgroundColor() => const Color(0xFF211F30);
   late CameraComponent cam;
@@ -45,7 +49,8 @@ class PixelAdventure extends FlameGame
     joystick = JoystickComponent(
         priority: 10,
         knob: SpriteComponent(sprite: Sprite(images.fromCache('HUD/Knob.png'))),
-        background: SpriteComponent(sprite: Sprite(images.fromCache('HUD/Joystick.png'))),
+        background: SpriteComponent(
+            sprite: Sprite(images.fromCache('HUD/Joystick.png'))),
         margin: const EdgeInsets.only(left: 32, bottom: 32));
     add(joystick);
   }
@@ -81,8 +86,10 @@ class PixelAdventure extends FlameGame
 
   void _loadLevel() {
     Future.delayed(const Duration(seconds: 1), () {
-      Level world = Level(player: player, levelName: levelNames[currentLevelIndex]);
-      cam = CameraComponent.withFixedResolution(width: 640, height: 360, world: world);
+      Level world =
+          Level(player: player, levelName: levelNames[currentLevelIndex]);
+      cam = CameraComponent.withFixedResolution(
+          width: 640, height: 360, world: world);
       cam.viewfinder.anchor = Anchor.topLeft;
 
       addAll([cam, world]);
